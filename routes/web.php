@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('main');
+// Route::get('/', function () {
+//     return view('shop');
+// })->name('main');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
-Route::get('/shop', 'ShopController@index')->name('shop.index');
+Route::get('/', 'ShopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 
 Route::get('/home', function() {

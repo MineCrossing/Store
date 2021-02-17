@@ -37,7 +37,7 @@
                             @foreach(Cart::content() as $item)
                                 <div class="row border-top border-bottom border-dark py-2 bg-white">
                                     <div class="col-4">
-                                        <a href="{{ route('shop.show', $item->model->slug) }}" alt="product"><img src="/storage/products/{{$item->model->slug}}.jpg" alt="Product" width="100%" height="100%"></a>
+                                        <a href="{{ route('shop.show', $item->model->slug) }}" alt="product"><img src="/storage/products/{{$item->model->slug}}.png" alt="Product" width="100%" height="100%"></a>
                                     </div>
                                     <div class="col-3 my-5">
                                         <div class="details">
@@ -105,7 +105,7 @@
                             @foreach(Cart::content() as $item)
                                 <div class="row border-top border-bottom border-dark py-2 bg-white d-block d-sm-block d-md-none">
                                     <div class="col-12">
-                                        <a href="{{ route('shop.show', $item->model->slug) }}" alt="product"><img src="/storage/products/{{$item->model->slug}}.jpg" alt="Product" width="100%" height="100%"></a>
+                                        <a href="{{ route('shop.show', $item->model->slug) }}" alt="product"><img src="/storage/products/{{$item->model->slug}}.png" alt="Product" width="100%" height="100%"></a>
                                     </div>
                                     <div class="col-12 my-5">
                                         <div class="details">
@@ -186,7 +186,7 @@
                         @foreach(Cart::instance('saveForLater')->content() as $item)
                         <div class="row border-top border-bottom border-dark py-2">
                                 <div class="col-4">
-                                    <a href="{{ route('shop.show', $item->model->slug) }}" alt="product"><img src="/storage/products/{{$item->model->slug}}.jpg" alt="Product" width="100%" height="100%"></a>
+                                    <a href="{{ route('shop.show', $item->model->slug) }}" alt="product"><img src="/storage/products/{{$item->model->slug}}.png" alt="Product" width="100%" height="100%"></a>
                                 </div>
                                 <div class="col-5 my-5">
                                     <div class="details">
@@ -209,7 +209,7 @@
                                     </p>
                                 </div>
                                 <div class="col-2 my-5">
-                                    {{ $item->model->presentPrice() }}
+                                    {{ $item->model->price }}
                                 </div>
                             </div>
                         @endforeach
