@@ -4,8 +4,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
+                <li class="breadcrumb-item"><a href="/">Shop</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </nav>
@@ -74,8 +73,6 @@
                             <div class="row my-3" style="background-color: #F5F5F5">
                                 <div class="col-12">
                                     <div class="text-right">
-                                            Subtotal: £{{ Cart::subtotal() }}<br>
-                                            Tax: £{{ Cart::tax() }}<br>
                                             <div class="font-weight-bold">Total: £{{ Cart::total() }}</div>
                                     </div>
                                 </div>
@@ -144,8 +141,6 @@
                             <div class="row my-3" style="background-color: #F5F5F5">
                                 <div class="col-12">
                                     <div class="text-right">
-                                            Subtotal: £{{ Cart::subtotal() }}<br>
-                                            Tax: £{{ Cart::tax() }}<br>
                                             <div class="font-weight-bold">Total: £{{ Cart::total() }}</div>
                                     </div>
                                 </div>

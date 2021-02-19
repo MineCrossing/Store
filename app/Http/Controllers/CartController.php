@@ -40,7 +40,7 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('info', 'Item is already in your cart');
         }
 
-        Cart::add($id, $name, 1, $price, [], 10)->associate(Product::class);
+        Cart::add($id, $name, 1, $price, [], 0)->associate(Product::class);
 
         return redirect()->route('cart.index')->with('success', 'Item added to cart');
     }
@@ -118,7 +118,7 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('info', 'Item is already in your Saved For Later');
         }
 
-        Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price, [], 10)->associate(Product::class);
+        Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price, [], 0)->associate(Product::class);
 
         return redirect()->route('cart.index')->with('success', 'Item added to Saved For Later');
     }

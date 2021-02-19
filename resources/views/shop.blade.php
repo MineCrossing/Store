@@ -4,7 +4,6 @@
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Shop</li>
         </ol>
     </nav>
@@ -16,7 +15,7 @@
                 <nav class="navbar navbar-light bg-light">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <p class="navbar-brand">By Category: </p>
+                            <a class="navbar-brand" href="{{ route('shop.index') }}">By Category: </a>
                         </li>
                         @foreach($categories as $category)
                             <li class="nav-item {{  setActiveCategory($category->slug) }}">
