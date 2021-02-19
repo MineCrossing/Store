@@ -64,7 +64,7 @@ class CheckoutController extends Controller
             Cart::instance('default')->destroy();
 
             //Successful at this point
-            Mail::to($request->email)->send(new PurchaseMail());
+            // Mail::to($request->email)->send(new PurchaseMail());
             return redirect()->route('confirmation.index')->with('success', 'Your payment was successful!');
         } catch(CardErrorException $e) {
             return back()->withErrors('Error! '.$e->getMessage());

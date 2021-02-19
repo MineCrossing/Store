@@ -33,23 +33,23 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        @if(!(Auth::user()))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('shop.index') }}">Shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('cart.index') }}" class="nav-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count rounded" style="background-color: skyblue;">
-                                    @if(Cart::instance('default')->count() > 0)
-                                        <span>{{ Cart::instance('default')->count() }}</span></span>
-                                    @endif
-                                </a>
-                            </li>
-                        @endif
-                    </ul>
+                    {{-- <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('shop.index') }}">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('cart.index') }}" class="nav-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count rounded" style="background-color: skyblue;">
+                                @if(Cart::instance('default')->count() > 0)
+                                    <span>{{ Cart::instance('default')->count() }}</span></span>
+                                @endif
+                            </a>
+                        </li>
+                    </ul> --}}
+
+                    {{ menu('main', 'layouts.menu') }}
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    {{-- <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -89,7 +89,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </nav>
