@@ -10,22 +10,6 @@
 </div>
 <div class="container d-none d-md-block">
     <div class="row py-3">
-        <div class="col-3 pt-5" id="sticky-sidebar">
-            <div class="sticky-top">
-                <nav class="navbar navbar-light bg-light">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="{{ route('shop.index') }}">By Category: </a>
-                        </li>
-                        @foreach($categories as $category)
-                            <li class="nav-item {{  setActiveCategory($category->slug) }}">
-                                <a href="{{ route('shop.index', ['category' => $category->slug]) }}" class="nav-link">{{$category->name}}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </nav>
-            </div>
-        </div>
         <div class="col" id="main">
             <div class="d-flex justify-content-between bg-white rounded p-2">
                 <h1>{{$categoryName}}</h1>
@@ -35,7 +19,7 @@
                     <a href="{{ route('shop.index', ['category'=>request()->category, 'sort' => 'high_low']) }}">High to Low</a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row p-2">
                 @forelse($products as $product)
                     <div class="col-3 bg-white rounded m-2 py-5">
                         <div class="">
@@ -56,6 +40,22 @@
                 <div class="col-12 d-flex justify-content-center">
                     {{ $products->appends(request()->input())->links() }}
                 </div>
+            </div>
+        </div>
+        <div class="col-3" id="#">
+            <div class="#">
+                <nav class="navbar navbar-light bg-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="{{ route('shop.index') }}">By Category: </a>
+                        </li>
+                        @foreach($categories as $category)
+                            <li class="nav-item {{  setActiveCategory($category->slug) }}">
+                                <a href="{{ route('shop.index', ['category' => $category->slug]) }}" class="nav-link">{{$category->name}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
