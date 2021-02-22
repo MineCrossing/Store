@@ -31,7 +31,7 @@
             </div>
         @endif
         <div class="row my-5 py-2 bg-white">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 {!! Form::open(['action' => 'CheckoutController@store', 'method' => 'POST', 'id' => 'payment-form']) !!}
                     <div class="form-group">
                         <h3>Billing Details</h3>
@@ -49,11 +49,11 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('email', 'Email Address')}}
-                        {{ Form::text('email', '', ['class' => 'form-control', 'value' => 'old("email")', 'required']) }}
+                        {{ Form::text('email', Auth::user()->email, ['class' => 'form-control', 'value' => 'old("email")', 'required']) }}
                     </div>
                     <div class="form-group">
                         {{ Form::label('name', 'Name')}}
-                        {{ Form::text('name', '', ['class' => 'form-control', 'value' => 'old("name")', 'required']) }}
+                        {{ Form::text('name', Auth::user()->name, ['class' => 'form-control', 'value' => 'old("name")', 'required']) }}
                     </div>
                     <div class="form-group">
                         {{ Form::label('address', 'Address')}}
@@ -103,7 +103,7 @@
                     {{ Form::submit('Submit Payment', ['class' => 'btn btn-success btn-lg btn-block', 'id' => 'complete-order']) }}
                 {!! Form::close() !!}
             </div>
-            <div class="col-5 offset-1">
+            <div class="col-12 col-md-6 px-3">
                 <div class="row bg-white">
                     <div class="col-12">
                         <h3>Your Order</h3>
@@ -135,18 +135,6 @@
                                     </div>
                                 </div>
                         </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row my-3 bg-white">
-                    <div class="col-12">
-                        <p>Have a code?</p>
-                    </div>
-                    <div class="col-12 form-group">
-                        {!! Form::open(['action' => 'CouponsController@store', 'method' => 'POST']) !!}
-                            {{ Form::text('code', '', ['class' => 'form-control', 'id' => 'coupon_code', 'placeholder' => 'e.g. Discount']) }}
-                            {{ Form::submit('Apply', ['class' => 'btn btn-outline-secondary btn-block mt-4']) }}
-                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

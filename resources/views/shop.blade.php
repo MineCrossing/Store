@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="col" id="main">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between bg-white rounded p-2">
                 <h1>{{$categoryName}}</h1>
                 <div class="price-range">
                     <strong>Price: </strong>
@@ -122,4 +122,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('extra-js')
+    <script src="{{ asset('js/app.js') }}" defer></script>
 @endsection
