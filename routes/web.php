@@ -36,6 +36,13 @@ Route::get('/home', function() {
     }
 })->name('home');
 
+Route::get('/authLogout', function() {
+    if(Auth::user()) {
+        Auth::logout();
+        return redirect()->route('shop.index');
+    }
+})->name('admin.logout');
+
 // Route::view('/product', 'product');
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');

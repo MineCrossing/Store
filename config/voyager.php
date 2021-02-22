@@ -138,7 +138,7 @@ return [
                 'target_blank' => true,
             ],
             'voyager::generic.logout' => [
-                'route'      => 'main',
+                'route'      => 'admin.logout',
                 'icon_class' => 'voyager-power',
             ],
         ],

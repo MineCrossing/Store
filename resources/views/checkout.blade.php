@@ -111,7 +111,7 @@
                     @foreach(Cart::instance('default')->content() as $item)
                         <div class="row">
                             <div class="col-4 my-2">
-                                <img src="/storage/products/{{$item->model->slug}}.png" alt="item" height="100%" width="100%">
+                                <img src="{{ asset('storage/'.$item->model->image)}}" alt="item" height="100%" width="100%">
                             </div>
                             <div class="col-6 my-2">
                                 <p>{{ $item->model->name }}</p>

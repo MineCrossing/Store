@@ -13,7 +13,8 @@
     <div class="container rounded">
         <div class="row my-5">
             <div class="col-6 offset-3 text-center bg-white py-2">
-                <img class="rounded" src="/storage/products/{{$product->slug}}.png" alt="product" height="100%" width="50%">
+                {{-- <img class="rounded" src="/storage/products/{{$product->slug}}.png" alt="product" height="100%" width="50%"> --}}
+                <img class="rounded" src="{{ asset('storage/'.$product->image)}}" alt="product" height="100%" width="50%">
             </div>
             <div class="col-6 offset-3 text-center bg-white">
                 <h1 class="mb-5 text-center pt-2"><strong>{{ $product->name }}</strong></h1>

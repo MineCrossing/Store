@@ -39,7 +39,7 @@
                 @forelse($products as $product)
                     <div class="col-3 bg-white rounded m-2 py-5">
                         <div class="">
-                            <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="/storage/products/{{$product->slug}}.png" alt="product"></a>
+                            <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="{{ asset('storage/'.$product->image)}}" alt="product"></a>
                             <a href="/shop/{{$product->slug}}"><div class="product-name text-left" style="color: black; font-weight: bold; font-size: 15px;">{{ $product->name }}</div></a>
                             <div class="product-price text-muted font-italic">£{{ $product->price }}</div>
                         </div>
@@ -101,7 +101,7 @@
                 @forelse($products as $product)
                     <div class="col-10 offset-2 bg-white rounded m-2 py-5">
                         <div class="">
-                            <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="/storage/products/{{$product->slug}}.png" alt="product"></a>
+                            <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="{{ asset('storage/'.$product->image)}}" alt="product"></a>
                             <a href="/shop/{{$product->slug}}"><div class="product-name text-center" style="color: black; font-weight: bold; font-size: 15px;">{{ $product->name }}</div></a>
                             <div class="product-price text-muted font-italic text-center">£{{ $product->price }}</div>
                         </div>
