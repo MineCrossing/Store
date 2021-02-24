@@ -54,6 +54,16 @@
                                 <a href="{{ route('shop.index', ['category' => $category->slug]) }}" class="nav-link">{{$category->name}}</a>
                             </li>
                         @endforeach
+                        <li class="nav-item border-top">
+                            <div class="navbar-brand">Cart </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('cart.index') }}" class="navar-brand"><i class="fas fa-shopping-cart shopping-icon"></i>
+                                @if (Cart::instance('default')->count() > 0)
+                                    <span class="cart-count"><span>{{ Cart::instance('default')->count() }}</span></span>
+                                @endif
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

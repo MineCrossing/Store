@@ -41,7 +41,7 @@
                             <div class="alert alert-danger">
                                 <ul>
                                     @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
+                                        <li>{!! $error !!}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -49,11 +49,19 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('email', 'Email Address')}}
-                        {{ Form::text('email', Auth::user()->email, ['class' => 'form-control', 'value' => 'old("email")', 'required']) }}
+                        @if (Auth::user())
+                            {{ Form::text('email', Auth::user()->email, ['class' => 'form-control', 'value' => 'old("email")', 'required']) }}
+                        @else
+                            {{ Form::text('email', '', ['class' => 'form-control', 'value' => 'old("email")', 'required']) }}
+                        @endif
                     </div>
                     <div class="form-group">
                         {{ Form::label('name', 'Name')}}
-                        {{ Form::text('name', Auth::user()->name, ['class' => 'form-control', 'value' => 'old("name")', 'required']) }}
+                        @if (Auth::user())
+                            {{ Form::text('name', Auth::user()->name, ['class' => 'form-control', 'value' => 'old("name")', 'required']) }}
+                        @else
+                            {{ Form::text('name', '', ['class' => 'form-control', 'value' => 'old("name")', 'required']) }}
+                        @endif
                     </div>
                     <div class="form-group">
                         {{ Form::label('address', 'Address')}}

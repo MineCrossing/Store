@@ -9,3 +9,9 @@
 .active {
     font-weight: bold;
 }
+.shopping-icon {
+    color: darkgrey;
+    &:hover {
+        color: #0ed862;
+    }
+}

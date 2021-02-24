@@ -51,6 +51,16 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                @if (Route::has('guestCheckout.index'))
+                                    <a class="btn btn-success btn-block" style="width:100%;" href="{{ route('guestCheckout.index') }}">
+                                        {{ __('Continue as Guest') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

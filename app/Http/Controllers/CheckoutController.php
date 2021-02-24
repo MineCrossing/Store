@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Mail\PurchaseMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\CheckoutRequest;
-use App\Mail\PurchaseMail;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Cartalyst\Stripe\Exception\CardErrorException;
@@ -20,6 +21,14 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        if(Cart::instance('default')->count() == 0) {
+            return redirect()->route('shop.index');
+        }
+
+        if(Auth::user() && request()->is('guestCheckout')) {
+            return redirect()->route('checkout.index');
+        }
+
         return view('checkout');
     }
 

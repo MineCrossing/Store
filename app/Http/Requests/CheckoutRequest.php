@@ -23,14 +23,22 @@ class CheckoutRequest extends FormRequest
      */
     public function rules()
     {
+
+        $emailValidation = auth()->user() ? 'required|email' : 'required|email|unique:users';
         return [
-            'email' => 'required|email',
+            'email' => $emailValidation,
             'name' => 'required|string',
             'address' => 'required',
             'city' => 'required',
             'county' => 'required',
             'postcode' => 'required',
             'phone' => 'required',
+        ];
+    }
+
+    public function messages() {
+        return [
+            'email.unique' => 'You already have an account with this email. Please <a href="/login">login</a> to continue!',
         ];
     }
 }
