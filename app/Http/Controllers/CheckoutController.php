@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\CheckoutRequest;
+use App\Models\Order;
+use App\Models\OrderProduct;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Cartalyst\Stripe\Exception\CardErrorException;
@@ -69,59 +71,48 @@ class CheckoutController extends Controller
                 ],
             ]);
 
+            $order = $this->addToOrdersTables($request, null);
+
             //Successful Payment
             Cart::instance('default')->destroy();
 
             //Successful at this point
-            // Mail::to($request->email)->send(new PurchaseMail());
+            Mail::to($request->email)->send(new PurchaseMail($order));
             return redirect()->route('confirmation.index')->with('success', 'Your payment was successful!');
         } catch(CardErrorException $e) {
+            $this->addToOrdersTables($request, $e->getMessage());
             return back()->withErrors('Error! '.$e->getMessage());
         }
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Add orders to associated tables upon checkout.
      */
-    public function show($id)
-    {
-        //
-    }
+    protected function addToOrdersTables($request, $error) {
+        //Insert into orders table
+        $order = Order::create([
+            'user_id' => Auth::user() ? Auth::user()->id : null,
+            'billing_email' => $request->email,
+            'billing_name' => $request->name,
+            'billing_address' => $request->address,
+            'billing_city' => $request->city,
+            'billing_county' => $request->county,
+            'billing_postcode' => $request->postcode,
+            'billing_phone' => $request->phone,
+            'billing_name_on_card' => $request->name_on_card,
+            'billing_total' => Cart::total(),
+            'error' => $error,
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        //Insert into order_product table
+        foreach(Cart::content() as $item) {
+            OrderProduct::create([
+                'order_id' => $order->id,
+                'product_id' => $item->model->id,
+                'quantity' => $item->qty,
+            ]);
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $order;
     }
 }

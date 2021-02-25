@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row" style="height: 100vh;">
-        <div class="col-12 my-auto align-self-center text-center">
+        <div class="col-12 my-auto align-self-center text-center bg-white">
             @if(session()->has('success'))
                 <div class="alert alert-success">
                     {{ session()->get('success') }}

@@ -2,6 +2,9 @@
 
 // use App\Mail\PurchaseMail;
 // use Illuminate\Support\Facades\Mail;
+
+use App\Mail\PurchaseMail;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,9 +72,8 @@ Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.inde
 Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
 Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
 
-// Route::get('/email', function() {
+Route::get('/email', function() {
 
-//     Mail::to('email@email.com')->send(new PurchaseMail());
-
-//     return new PurchaseMail();
-// });
+    $order = Order::find(1);
+    return new PurchaseMail($order);
+});
