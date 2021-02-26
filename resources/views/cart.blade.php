@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+@component('components.breadcrumbs')
+    <a href="/">Shop</a>
+    <i class="fas fa-chevron-right breadcrumb-separator"></i>
+    <span>Cart</span>
+@endcomponent
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Shop</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Cart</li>
-            </ol>
-        </nav>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{!! $error !!}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
     <div class="container cart-section">
         @if(session()->has('success'))
@@ -25,7 +33,6 @@
                 {{ session()->get('error') }}
             </div>
         @endif
-
         @if(Cart::count() > 0)
             <div>
                 <h2>{{ Cart::count() }} item(s) in Shopping Cart</h2>

@@ -72,8 +72,11 @@ Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.inde
 Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
 Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
 
-Route::get('/email', function() {
+// Email Template View
+// Route::get('/email', function() {
 
-    $order = Order::find(1);
-    return new PurchaseMail($order);
-});
+//     $order = Order::find(1);
+//     return new PurchaseMail($order);
+// });
+
+Route::get('/search', 'ShopController@search')->name('search');

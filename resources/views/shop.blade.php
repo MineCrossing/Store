@@ -1,12 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+@component('components.breadcrumbs')
+    <a class="breadcrumb-item active" href="/">Shop</a>
+    {{-- <i class="fas fa-chevron-right breadcrumb-separator"></i> --}}
+@endcomponent
 <div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Shop</li>
-        </ol>
-    </nav>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{!! $error !!}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </div>
 <div class="container d-none d-md-block">
     <div class="row py-3">
