@@ -80,3 +80,9 @@ Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
 // });
 
 Route::get('/search', 'ShopController@search')->name('search');
+
+Route::get('/myaccount', 'UsersController@index')->name('users.index')->middleware('auth');
+Route::get('/myaccount/{order}', 'UsersController@show')->name('orders.show')->middleware('auth');
+Route::get('/myaccount/{user}/edit', 'UsersController@edit')->name('users.edit')->middleware('auth');
+Route::patch('/myaccount/{user}', 'UsersController@update')->name('users.update')->middleware('auth');
+
