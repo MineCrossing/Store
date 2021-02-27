@@ -70,6 +70,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Payment Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,6 +80,11 @@
                             <td>{{$product->name}}</td>
                             <td>£{{$product->price}}</td>
                             <td>{{$product->description}}</td>
+                            @if ($order->error != null)
+                                <td>{{$order->error}}</td>
+                            @else 
+                                <td>Payment Complete</td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>
