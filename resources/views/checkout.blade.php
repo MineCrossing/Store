@@ -14,7 +14,7 @@
         </nav>
     </div>
     <div class="container">
-        <h1 class="border-dark border-top border-bottom" style="width:5%;">Checkout</h1>
+        <h1 class="border-dark border-top border-bottom" style="width:5%;color:#fff;">Checkout</h1>
         @if(session()->has('success'))
             <div class="alert alert-success">
                 {{ session()->get('success') }}

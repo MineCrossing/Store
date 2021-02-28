@@ -31,6 +31,8 @@ You can get further details about your order by logging into our website.
 Go to Website
 @endcomponent
 
+Note: Items may take up to 24 hours to appear in-game, please be patient. If you haven't received your items after 72 hours, contact us.
+
 
 Thanks,<br>
 The MineCrossing Team

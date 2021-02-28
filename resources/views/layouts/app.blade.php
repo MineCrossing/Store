@@ -32,26 +32,16 @@
         <div class="container text-center" id="image-header">
             <div class="row">
                 <div class="col-12 d-block d-md-none">
-                    <img src="/storage/images/title.png" alt="MineCrossing Store" height="300px" width="100%">
+                    <img src="/storage/images/title.png" alt="MineCrossing Store" width="100%">
                 </div>
                 <div class="col-12 d-none d-md-block">
-                    <img src="/storage/images/title.png" alt="MineCrossing Store" height="300px" width="600px">
+                    <img src="/storage/images/title.png" alt="MineCrossing Store" width="600px">
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        {{ menu('main', 'layouts.menu') }}
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    {{ menu('main', 'layouts.menu') }}
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
 

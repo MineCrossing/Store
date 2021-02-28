@@ -33,7 +33,7 @@
                 <hr>
                 <div class="row bg-white">
                     <div class="col-12 col-md-4">
-                        <p class="text-muted font-italic"><strong>£{{ $product->price }}</strong></p>
+                        <p class="text-muted font-italic my-2"><strong>£{{ $product->price }}</strong></p>
                     </div>
                     <div class="col-12 col-md-5 offset-md-3 text-center">
                         <form action="{{route('cart.store')}}" method="POST">

@@ -81,9 +81,9 @@
                             <td>£{{$product->price}}</td>
                             <td>{{$product->description}}</td>
                             @if ($order->error != null)
-                                <td>{{$order->error}}</td>
+                                <td><span class="text-danger">Failed: </span>{{$order->error}}</td>
                             @else 
-                                <td>Payment Complete</td>
+                                <td><span class="text-success">Success: </span> Payment Complete</td>
                             @endif
                         </tr>
                     @endforeach

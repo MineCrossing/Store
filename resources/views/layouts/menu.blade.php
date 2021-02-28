@@ -1,5 +1,5 @@
-<div class="nav-style d-flex justify-content-center text-center" id="navbar-style">
-    <ul>
+<div class="d-flex justify-content-center text-center" id="nav-box">
+    <ul id="navbar">
         <li><a href="https://minecrossing.xyz"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="https://minecrossing.xyz/blog"><i class="fas fa-comment-dots"></i> Blog</a></li>
         <li><a href="https://minecrossing.xyz/leaderboards"><i class="fas fa-chart-bar"></i> Leaderboards</a></li>

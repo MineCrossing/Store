@@ -34,8 +34,8 @@
             </div>
         @endif
         @if(Cart::count() > 0)
-            <div>
-                <h2>{{ Cart::count() }} item(s) in Shopping Cart</h2>
+            <div class="mt-2">
+                <h1 style="color:#fff;">{{ Cart::count() }} item(s) in Shopping Cart</h1>
                     
                 <div class="container">
                     <div class="row my-5 d-none d-md-block">
