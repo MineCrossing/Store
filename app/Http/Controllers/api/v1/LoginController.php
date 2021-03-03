@@ -24,22 +24,4 @@ class LoginController extends Controller
 		// 	'accessToken' => $authToken['token'],
 		// ]);
 	}
-
-	// public function login(Request $request)
-	// {
-	// 	$login = $request->validate([
-	// 		'email' => 'required|string',
-	// 		'password' => 'required|string'
-	// 	]);
-
-	// 	if (!Auth::attempt($login)) {
-	// 		return response(['message' => 'Invalid Login']);
-	// 	}
-
-	// 	$accessToken = Auth::user()->createToken('loginToken')->accessToken;
-
-	// 	return response([
-	// 		'user' => Auth::user(),
-	// 	]);
-	// }
 }

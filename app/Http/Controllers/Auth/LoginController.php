@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use mbing\opensslCryptor\Cryptor;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Cookie;
 use App\Providers\RouteServiceProvider;
+use Laravel\Passport\Bridge\AccessToken;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -38,6 +42,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
     }
 
         /**
@@ -58,8 +63,14 @@ class LoginController extends Controller
      */
     public function redirectTo() {
         // dd(session()->get('previousUrl'));
-        $accessToken = Auth::user()->createToken('authToken')->accessToken;
-        Cookie::queue('loginAuth', $accessToken, 180);
+        // $accessToken = Auth::user()->createToken('authToken')->accessToken;
+        // $id = $accessToken->token->id;
+        
+        $tokenObj = Auth::user()->createToken('authToken');
+        $token = $tokenObj->accessToken;
+        $token_id = $tokenObj->token->id;
+        Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, '/');
         return str_replace(url('/'), '', session()->get('previousUrl', '/')); 
     }
+
 }

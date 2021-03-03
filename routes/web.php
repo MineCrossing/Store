@@ -4,6 +4,7 @@
 // use Illuminate\Support\Facades\Mail;
 
 use App\Mail\PurchaseMail;
+use App\Models\Oauth;
 use App\Models\Order;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
@@ -40,12 +41,21 @@ Route::get('/home', function() {
     }
 })->name('home');
 
-Route::get('/authLogout', function() {
+Route::post('/authLogout', function() {
     if(Auth::user()) {
+        $cookie = Cookie::get('loginAuth');
+        if(isset($cookie)) {
+            $access = Oauth::where('id', json_decode($cookie)->token)->first();
+            $access->update([
+                'revoked' => 1,
+            ]);
+            Cookie::queue(Cookie::forget('loginAuth'));
+        }
         Auth::logout();
-        return redirect()->route('shop.index')->withCookie(Cookie::forget('loginAuth'));
+        return redirect()->route('shop.index');
     }
 })->name('admin.logout');
+
 
 // Route::view('/product', 'product');
 Route::get('/cart', 'CartController@index')->name('cart.index');
