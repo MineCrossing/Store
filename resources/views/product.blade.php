@@ -24,16 +24,17 @@
                 <img class="rounded" src="{{ asset('storage/'.$product->image)}}" alt="product" height="100%" width="50%">
             </div>
             <div class="col-6 offset-3 text-center bg-white">
-                <h1 class="mb-5 text-center pt-2"><strong>{{ $product->name }}</strong></h1>
+                <h1 class="mb-5 text-center pt-2"><span class="productName">{{ $product->name }}</span></h1>
 
-                <p class="text-secondary" style="font-size: 18px;opacity:0.7;"><strong>{{ $product->details }}</strong></p>
-                <p style="font-size: 15px;">{{ $product->description }}</p>
+                <div class="productInformation">
+                    <p>{{ $product->description }}</span></p>
+                </div>
 
                 <!-- <a href="#" style="font-size:24px;" role="button" class="btn btn-outline-secondary">Add to Cart</a> -->
                 <hr>
                 <div class="row bg-white">
                     <div class="col-12 col-md-4">
-                        <p class="text-muted font-italic my-2"><strong>£{{ $product->price }}</strong></p>
+                        <p class="font-italic my-2"><span class="productPrice">£{{ $product->price }}</span></p>
                     </div>
                     <div class="col-12 col-md-5 offset-md-3 text-center">
                         <form action="{{route('cart.store')}}" method="POST">

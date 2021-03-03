@@ -14,3 +14,28 @@
         align-items: center;
     }
 }
+.search-icon {
+    color: #0ed862;
+}
+.searchInformation {
+    background-color: $white;
+    h1 {
+        color: $minecrossing-text;
+        font-weight: bold;
+    }
+    p {
+        font-style: italic;
+    }
+}
+.search-product {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+.search-price {
+    color: $minecrossing-text;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}

@@ -20,9 +20,9 @@
     <div class="row py-3">
         <div class="col" id="main">
             <div class="d-flex justify-content-between bg-white rounded p-2">
-                <h1>{{$categoryName}}</h1>
+                <h1 class="categoryName">{{$categoryName}}</h1>
                 <div class="price-range">
-                    <strong>Price: </strong>
+                    <span>Price: </span>
                     <a href="{{ route('shop.index', ['category'=>request()->category, 'sort' => 'low_high']) }}">Low to High</a> | 
                     <a href="{{ route('shop.index', ['category'=>request()->category, 'sort' => 'high_low']) }}">High to Low</a>
                 </div>
@@ -30,9 +30,9 @@
             <div class="row p-2">
                 @forelse($products as $product)
                     <div class="col-3 bg-white rounded m-2 py-5">
-                        <div class="">
+                        <div class="d-inline">
                             <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="{{ asset('storage/'.$product->image)}}" alt="product"></a>
-                            <a href="/shop/{{$product->slug}}"><div class="product-name text-left" style="color: black; font-weight: bold; font-size: 15px;">{{ $product->name }}</div></a>
+                            <a href="/shop/{{$product->slug}}"><div class="product-name text-left">{{ $product->name }}</div></a>
                             <div class="product-price text-muted font-italic">£{{ $product->price }}</div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <nav class="navbar navbar-light bg-light">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="navbar-brand" href="{{ route('shop.index') }}">By Category: </a>
+                            <a class="categoryHeader" href="{{ route('shop.index') }}">By Category: </a>
                         </li>
                         @foreach($categories as $category)
                             <li class="nav-item {{  setActiveCategory($category->slug) }}">
@@ -63,7 +63,7 @@
                             </li>
                         @endforeach
                         <li class="nav-item border-top">
-                            <div class="navbar-brand">Cart </div>
+                            <div class="categoryHeader">Cart </div>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('cart.index') }}" class="navar-brand"><i class="fas fa-shopping-cart shopping-icon"></i>
@@ -87,7 +87,7 @@
                 <nav class="navbar navbar-light bg-light">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <p class="navbar-brand">By Category: </p>
+                            <a class="categoryHeader" href="{{ route('shop.index') }}">By Category: </a>
                         </li>
                         @foreach($categories as $category)
                             <li class="nav-item {{  setActiveCategory($category->slug) }}">
@@ -102,11 +102,11 @@
             <div class="d-flex justify-content-between">
                 <div class="row bg-white">
                     <div class="col-12 text-center">
-                        <h1>{{$categoryName}}</h1>
+                        <h1 class="categoryName">{{$categoryName}}</h1>
                     </div>
                     <div class="col-12 text-center">
                         <div class="price-range">
-                            <strong>Price: </strong>
+                            <span>Price: </span>
                             <a href="{{ route('shop.index', ['category'=>request()->category, 'sort' => 'low_high']) }}">Low to High</a> |
                             <a href="{{ route('shop.index', ['category'=>request()->category, 'sort' => 'high_low']) }}">High to Low</a>
                         </div>
@@ -120,7 +120,7 @@
                     <div class="col-10 offset-2 bg-white rounded m-2 py-5">
                         <div class="">
                             <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="{{ asset('storage/'.$product->image)}}" alt="product"></a>
-                            <a href="/shop/{{$product->slug}}"><div class="product-name text-center" style="color: black; font-weight: bold; font-size: 15px;">{{ $product->name }}</div></a>
+                            <a href="/shop/{{$product->slug}}"><div class="product-name text-center">{{ $product->name }}</div></a>
                             <div class="product-price text-muted font-italic text-center">£{{ $product->price }}</div>
                         </div>
                     </div>

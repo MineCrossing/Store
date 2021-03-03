@@ -14,7 +14,7 @@
         </nav>
     </div>
     <div class="container">
-        <h1 class="border-dark border-top border-bottom" style="width:5%;color:#fff;">Checkout</h1>
+        <h1 class="border-dark border-top border-bottom checkoutHeader">Checkout</h1>
         @if(session()->has('success'))
             <div class="alert alert-success">
                 {{ session()->get('success') }}
@@ -134,11 +134,11 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="row my-3" style="background-color: #F5F5F5">
+                <div class="row my-3">
                     <div class="col-12">
                         <div class="text-right">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12 finalTotal">
                                         Total: £{{ Cart::total() }}<br>
                                     </div>
                                 </div>

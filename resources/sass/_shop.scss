@@ -1,0 +1,50 @@
+.price-range {
+    a {
+        color: grey;
+        text-decoration: none;
+    }
+    span {
+        color: $minecrossing-text;
+        font-weight: bold;
+    } 
+}
+.price-range a:hover {
+    font-weight: bold;
+    color: black;
+}
+.active {
+    font-weight: bold;
+}
+.shopping-icon {
+    color: darkgrey;
+    &:hover {
+        color: $minecrossing-text;
+    }
+}
+.categoryName {
+    color: $minecrossing-text;
+}
+.categoryHeader {
+    color: $minecrossing-text;
+    font-weight: bold;
+    font-size: 18px;
+}
+.product-name {
+    color: $minecrossing-text;
+    font-weight: bold;
+    font-size: 15px;
+}
+.productName {
+    color: $minecrossing-text;
+    font-weight: bold;
+    font-size: 25px;
+}
+.productPrice {
+    color: $minecrossing-text;
+    font-size: 20px;
+}
+.productInformation p {
+    font-size: 18px;
+    opacity: 0.7;
+    font-style: italic;
+}

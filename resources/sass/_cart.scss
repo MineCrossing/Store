@@ -1,0 +1,29 @@
+.cartHeader {
+  color: $white;
+}
+.details {
+  p {
+    opacity: 0.6;
+    a {
+      color:$minecrossing-text;
+      text-decoration:none;
+      font-size:22px;
+      font-weight: bold;
+      opacity: 1;
+    }
+  }
+}
+.actions {
+  font-size: 12px;
+}
+#totalBox {
+  background-color: #F5F5F5;
+  box-shadow: 5px 10px 8px #888888;
+}
+.item-subtotal {
+  color: $minecrossing-text;
+}
+.saveLaterBox {
+  background-color: #e9ecef;
+  box-shadow: 5px 10px 8px #888888;
+}

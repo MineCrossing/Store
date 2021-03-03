@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Login User API Route, returns access token and user model.
+Route::prefix('/user')->group(function() {
+    Route::get('/auth', 'api\v1\LoginController@auth')->middleware('auth:api');
+    // Route::post('/login', 'api\v1\LoginController@login');
 });
+

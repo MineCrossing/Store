@@ -34,16 +34,18 @@
     </div>
 
     <div class="container rounded">
-        <h1>Search Results</h1>
-        <p>We found {{$products->count()}} result(s) for {{ request()->input('query')}}</p>
+        <div class="searchInformation col-md-5">
+            <h1>Search Results</h1>
+            <p>We found {{$products->count()}} result(s) for {{ request()->input('query')}}</p>
+        </div>
 
         <div class="row p-2">
             @forelse($products as $product)
                 <div class="col-3 bg-white rounded m-2 py-5">
-                    <div class="">
+                    <div class="text-center">
                         <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="{{ asset('storage/'.$product->image)}}" alt="product"></a>
-                        <a href="/shop/{{$product->slug}}"><div class="product-name text-left" style="color: black; font-weight: bold; font-size: 15px;">{{ $product->name }}</div></a>
-                        <div class="product-price text-muted font-italic">£{{ $product->price }}</div>
+                        <a href="/shop/{{$product->slug}}"><div class="search-product">{{ $product->name }}</div></a>
+                        <div class="search-price">£{{ $product->price }}</div>
                     </div>
                 </div>
             @empty

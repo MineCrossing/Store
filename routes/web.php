@@ -5,6 +5,7 @@
 
 use App\Mail\PurchaseMail;
 use App\Models\Order;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,7 +43,7 @@ Route::get('/home', function() {
 Route::get('/authLogout', function() {
     if(Auth::user()) {
         Auth::logout();
-        return redirect()->route('shop.index');
+        return redirect()->route('shop.index')->withCookie(Cookie::forget('loginAuth'));
     }
 })->name('admin.logout');
 
@@ -85,4 +86,3 @@ Route::get('/myaccount', 'UsersController@index')->name('users.index')->middlewa
 Route::get('/myaccount/{order}', 'UsersController@show')->name('orders.show')->middleware('auth');
 Route::get('/myaccount/{user}/edit', 'UsersController@edit')->name('users.edit')->middleware('auth');
 Route::patch('/myaccount/{user}', 'UsersController@update')->name('users.update')->middleware('auth');
-

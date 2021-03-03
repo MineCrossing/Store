@@ -46,6 +46,8 @@
         </main>
 
     </div>
+
+    @include('partials.footer')
     <!-- Scripts -->
     @yield('extra-js')
 </body>

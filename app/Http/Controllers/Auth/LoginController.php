@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -56,6 +58,8 @@ class LoginController extends Controller
      */
     public function redirectTo() {
         // dd(session()->get('previousUrl'));
-       return str_replace(url('/'), '', session()->get('previousUrl', '/')); 
+        $accessToken = Auth::user()->createToken('authToken')->accessToken;
+        Cookie::queue('loginAuth', $accessToken, 180);
+        return str_replace(url('/'), '', session()->get('previousUrl', '/')); 
     }
 }
