@@ -69,7 +69,7 @@ class LoginController extends Controller
         $tokenObj = Auth::user()->createToken('authToken');
         $token = $tokenObj->accessToken;
         $token_id = $tokenObj->token->id;
-        Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, 'null', 'minecrossing.xyz');
+        Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, 'null', '.minecrossing.xyz');
         return str_replace(url('/'), '', session()->get('previousUrl', '/')); 
     }
 

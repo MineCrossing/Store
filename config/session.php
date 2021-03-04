@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'file'),
+    'driver' => 'database',
 
     /*
     |--------------------------------------------------------------------------
@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', 'minecrossing.xyz'),
+    'domain' => '.minecrossing.xyz',
 
     /*
     |--------------------------------------------------------------------------
