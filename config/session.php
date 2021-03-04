@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', '.minecrossing.xyz'),
+    'domain' => env('SESSION_DOMAIN', 'minecrossing.xyz'),
 
     /*
     |--------------------------------------------------------------------------
