@@ -62,11 +62,10 @@ class LoginController extends Controller
      * 
      * @return view
      */
-    public function redirectTo() {
+    public function redirectTo($prev) {
         // dd(session()->get('previousUrl'));
         // $accessToken = Auth::user()->createToken('authToken')->accessToken;
         // $id = $accessToken->token->id;
-        $prev = $_SERVER['HTTP_REFERER'];
         if(!(Str::contains($prev, 'minecrossing.xyz'))) {
             $prev = 'https://store.minecrossing.xyz';
         }
