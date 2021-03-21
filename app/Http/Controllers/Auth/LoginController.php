@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Str;
 use mbing\opensslCryptor\Cryptor;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -74,7 +73,7 @@ class LoginController extends Controller
         $token = $tokenObj->accessToken;
         $token_id = $tokenObj->token->id;
         Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, 'null', '.minecrossing.xyz');
-        return redirect($prev); 
+        return $prev;  
     }
 
 }
