@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Str;
 use mbing\opensslCryptor\Cryptor;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
