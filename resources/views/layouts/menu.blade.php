@@ -5,7 +5,7 @@
         <li><a href="https://minecrossing.xyz/leaderboards"><i class="fas fa-chart-bar"></i> Leaderboards</a></li>
         <li><a href="https://minecrossing.xyz/rules"><i class="fas fa-scroll"></i> Rules</a></li>
         <li><a href="https://minecrossing.xyz/chat"><i class="fas fa-comments"></i> Chat</a></li>
-        <li><a href="https://minecrossing.xyz/map" target="_blank"><i class="fas fa-map-marked-alt"></i> World Map</a></li>
+        <li><a href="https://minecrossing.xyz/map"><i class="fas fa-map-marked-alt"></i> World Map</a></li>
         <li><a class="active" id="store" href="{{route('shop.index')}}"><i class="fas fa-shopping-cart"></i> Store</a></li>
         @guest
         <li><a id="login" href="{{route('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
