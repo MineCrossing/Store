@@ -65,6 +65,10 @@ class LoginController extends Controller
         // dd(session()->get('previousUrl'));
         // $accessToken = Auth::user()->createToken('authToken')->accessToken;
         // $id = $accessToken->token->id;
+        // $prev = $_SERVER['HTTP_REFERER'];
+        // if(!($prev->contains('minecrossing.xyz'))) {
+        //     $prev = 'https://store.minecrossing.xyz';
+        // }
         
         $tokenObj = Auth::user()->createToken('authToken');
         $token = $tokenObj->accessToken;
