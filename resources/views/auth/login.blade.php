@@ -10,6 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        <input type="hidden" name="referer" value="{{ request()->server('HTTP_REFERER') }}">
                         {{-- Login Input --}}
                         <div class="form-group row">
                             <div class="col-md-8 offset-md-2">
