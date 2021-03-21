@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Str;
 use mbing\opensslCryptor\Cryptor;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -66,16 +67,14 @@ class LoginController extends Controller
         // $accessToken = Auth::user()->createToken('authToken')->accessToken;
         // $id = $accessToken->token->id;
         $prev = $_SERVER['HTTP_REFERER'];
-        if(!($prev->contains('minecrossing.xyz'))) {
+        if(!(Str::contains($prev, 'minecrossing.xyz'))) {
             $prev = 'https://store.minecrossing.xyz';
         }
-        
-        return $prev;
-        // $tokenObj = Auth::user()->createToken('authToken');
-        // $token = $tokenObj->accessToken;
-        // $token_id = $tokenObj->token->id;
-        // Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, 'null', '.minecrossing.xyz');
-        // return str_replace(url('/'), '', session()->get('previousUrl', '/')); 
+        $tokenObj = Auth::user()->createToken('authToken');
+        $token = $tokenObj->accessToken;
+        $token_id = $tokenObj->token->id;
+        Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, 'null', '.minecrossing.xyz');
+        return redirect($prev); 
     }
 
 }

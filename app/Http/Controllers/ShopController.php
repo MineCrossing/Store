@@ -11,6 +11,7 @@ class ShopController extends Controller
     //
     public function index() {
         //Definitions
+
         $pagination = 9;
         $categories = Category::all();
         $products = Product::all();
