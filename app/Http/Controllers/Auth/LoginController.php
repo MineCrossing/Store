@@ -68,14 +68,15 @@ class LoginController extends Controller
         // dd(session()->get('previousUrl'));
         // $accessToken = Auth::user()->createToken('authToken')->accessToken;
         // $id = $accessToken->token->id;
-        if(!(Str::contains($prev, 'minecrossing.xyz'))) {
-            $prev = 'https://store.minecrossing.xyz';
-        }
-        $tokenObj = Auth::user()->createToken('authToken');
-        $token = $tokenObj->accessToken;
-        $token_id = $tokenObj->token->id;
-        Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, 'null', '.minecrossing.xyz');
-        return $prev;
+        dd($prev);
+        // if(!(Str::contains($prev, 'minecrossing.xyz'))) {
+        //     $prev = 'https://store.minecrossing.xyz';
+        // }
+        // $tokenObj = Auth::user()->createToken('authToken');
+        // $token = $tokenObj->accessToken;
+        // $token_id = $tokenObj->token->id;
+        // Cookie::queue('loginAuth', '{"token": "'.$token_id.'","userId":"'.Auth::user()->id.'"}', 180, 'null', '.minecrossing.xyz');
+        // return $prev;
     }
 
 }
