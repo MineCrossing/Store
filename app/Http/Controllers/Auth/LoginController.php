@@ -56,7 +56,7 @@ class LoginController extends Controller
     {
         session()->put('previousUrl', url()->previous());
         $referer = Request::server('HTTP_REFERER');
-        Cookie::queue('referer', $referer);
+        session(['referer' => $referer]);
         return view('auth.login', compact('referer'));
     }
 
@@ -69,7 +69,9 @@ class LoginController extends Controller
         // dd(session()->get('previousUrl'));
         // $accessToken = Auth::user()->createToken('authToken')->accessToken;
         // $id = $accessToken->token->id;
-        $prev = Cookie::get('referer');
+        if(session()->has('referer')) {
+            $prev = session('referer');
+        }
         if(!(Str::contains($prev, 'minecrossing.xyz'))) {
             $prev = 'https://store.minecrossing.xyz';
         }
