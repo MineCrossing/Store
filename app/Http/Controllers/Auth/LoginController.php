@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Cookie;
 use App\Providers\RouteServiceProvider;
 use Laravel\Passport\Bridge\AccessToken;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Request;
 
 class LoginController extends Controller
 {
@@ -54,7 +55,8 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         session()->put('previousUrl', url()->previous());
-        return view('auth.login');
+        $referer = Request::server('HTTP_REFERER');
+        return view('auth.login', compact('referer'));
     }
 
     /**
