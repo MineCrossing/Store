@@ -25,7 +25,6 @@
             font-family: 'Roboto', sans-serif;
         }       
     </style>
-
     @yield('extra-css')
 </head>
 <body>
