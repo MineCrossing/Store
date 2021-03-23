@@ -9769,12 +9769,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 #app {
-  background: url("/storage/images/background.png");
   min-height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background: #fff;
 }
 
 /**

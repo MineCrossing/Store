@@ -22,23 +22,30 @@
         
         * {
             font-family: 'Roboto', sans-serif;
-        }       
+        }    
+        .store-header {
+            background-image: url("/storage/images/background.png");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }   
     </style>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css">
     @yield('extra-css')
 </head>
 <body>
     <div id="app">
-        <div class="container text-center" id="image-header">
-            <div class="row">
+        <header class="store-header">
+            <div class="row text-center">
                 <div class="col-12 d-block d-md-none">
-                    <img src="/storage/images/title.png" alt="MineCrossing Store" width="100%">
+                    <img src="/storage/images/title.png" alt="MineCrossing Store" class="logo pure-img pure-u-1-3" width="100%">
                 </div>
                 <div class="col-12 d-none d-md-block">
-                    <img src="/storage/images/title.png" alt="MineCrossing Store" width="600px">
+                    <img src="/storage/images/title.png" alt="MineCrossing Store" class="logo pure-img pure-u-1-3" width="100%">
                 </div>
             </div>
-        </div>
+        </header>
         {{ menu('main', 'layouts.menu') }}
 
         <main class="">
