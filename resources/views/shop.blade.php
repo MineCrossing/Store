@@ -19,7 +19,7 @@
 <div class="container d-none d-md-block">
     <div class="row py-3">
         <div class="col" id="main">
-            <div class="d-flex justify-content-between bg-white rounded p-2">
+            <div class="productBox d-flex justify-content-between rounded p-2">
                 <h1 class="categoryName">{{$categoryName}}</h1>
                 <div class="price-range">
                     <span>Price: </span>
@@ -29,7 +29,7 @@
             </div>
             <div class="row p-2">
                 @forelse($products as $product)
-                    <div class="col-3 bg-white rounded m-2 py-5">
+                    <div class="productBox col-3 rounded m-2 py-5">
                         <div class="d-inline">
                             <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="{{ asset('storage/'.$product->image)}}" alt="product"></a>
                             <a href="/shop/{{$product->slug}}"><div class="product-name text-left">{{ $product->name }}</div></a>
@@ -117,7 +117,7 @@
         <div class="col-12 my-2" id="main">
             <div class="row justify-content-center">
                 @forelse($products as $product)
-                    <div class="col-10 offset-2 bg-white rounded m-2 py-5">
+                    <div class="productBox col-10 offset-2 rounded m-2 py-5">
                         <div class="">
                             <a href="/shop/{{$product->slug}}"><img class="mx-auto d-block" height="100%" width="100%" src="{{ asset('storage/'.$product->image)}}" alt="product"></a>
                             <a href="/shop/{{$product->slug}}"><div class="product-name text-center">{{ $product->name }}</div></a>
