@@ -9952,7 +9952,6 @@ h3 {
 
 .breadcrumbs {
   background: #e9ecef;
-  border-bottom: 1px solid black;
   padding: 24px 0;
 }
 
@@ -10105,6 +10104,7 @@ h3 {
 
 .site-footer a {
   color: #737373;
+  text-decoration: none;
 }
 
 .site-footer a:hover {
