@@ -9906,7 +9906,7 @@ h3 {
 }
 
 #navbar {
-  width: 45%;
+  width: fit-content;
   display: inline-block;
   list-style-type: none;
   text-align: center;
@@ -9925,7 +9925,7 @@ h3 {
   color: #666;
   text-decoration: none;
   text-align: center;
-  padding: 14px 16px;
+  padding: 11px 14px;
 }
 
 #navbar li a:hover:not(.active) {
@@ -9940,6 +9940,14 @@ h3 {
 
 #navbar li a.active:hover {
   background-color: #0ed862;
+}
+
+.store-header {
+    height: 337.5px;
+}
+
+.logo {
+    width: 600px !important;
 }
 
 .breadcrumbs {
