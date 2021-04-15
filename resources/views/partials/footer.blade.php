@@ -9,7 +9,7 @@
                     better than it actually is.
                 </p>
             </div>
-  
+
             <div class="footer-extras pure-u-1-3">
                 <h6>Links</h6>
                 <ul class="footer-links">
@@ -19,7 +19,7 @@
                     <li><a href="//play.minecrossing.xyz" target="_blank">Minecraft</a></li>
                 </ul>
             </div>
-  
+
             <div class="footer-misc footer-links pure-u-1-3">
                 <h6>Quick Links</h6>
                 <ul class="footer-links">
@@ -30,19 +30,19 @@
                 </ul>
             </div>
         </div>
-        
+
         <hr style="background-color: #0ed862;border-color: #0ed862;opacity: .4;">
-  
+
         <div class="footer-copyright pure-u-2-5">
-            <p class="copyright-text">Copyright © 2021 All Rights Reserved by <a href="#">MineCrossing</a></p>
+            <p class="copyright-text">Copyright © 2021 All Rights Reserved by <a href="//minecrossing.xyz">MineCrossing</a></p>
         </div>
-  
+
         <div class="footer-social pure-u-3-5">
             <ul class="social-icons">
                 <li><a class="facebook" href="//facebook.com/MineCrossing" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
                 <li><a class="twitter" href="//twitter.com/MineCrossingMC" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
                 <li><a class="github" href="//github.com/MineCrossing" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a class="youtube" href="//youtube.com/MineCrossing" target="_blank"><i class="fab fa-youtube-square"></i></a></li>   
+                <li><a class="youtube" href="//youtube.com/MineCrossing" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
             </ul>
         </div>
     </div>
