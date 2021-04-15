@@ -7,8 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>MineCrossing || Store</title>
-
+    <title>MineCrossing Official Site - Store</title>
+    <link rel="icon" href="https://minecrossing.xyz/favicon.ico"/>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,17 +19,17 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-        
+
         * {
             font-family: 'Roboto', sans-serif;
-        }    
+        }
         .store-header {
             background-image: url("/storage/images/background.png");
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-        }   
+        }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css">
     @yield('extra-css')
