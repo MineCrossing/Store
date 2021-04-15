@@ -35,7 +35,7 @@
         @guest
         <li><a id="login" href="{{route('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
         @else
-        <li><a href="/myaccount">My Account</a></li>
+        <li><a href="/myaccount"><i class="fas fa-user"></i> My Account</a></li>
         <li><a id="logout" href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
