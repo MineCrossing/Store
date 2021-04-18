@@ -198,12 +198,6 @@
                                 </div>
                                 <div class="col-md-1 my-5 actions">
                                     <p class="float-md-right">
-                                        <!-- <a href="" style="text-decoration: none;color: black;">Remove</a> -->
-                                        {!! Form::open(['action' => array('SaveForLaterController@destroy', $item->rowId), 'method' => 'DELETE']) !!}
-                                            {{ Form::submit('Remove', ['style' => 'color:black;text-decoration: none; border:none; background: none;float: right;']) }}
-                                        {!! Form::close() !!}
-                                    </p>
-                                    <p class="float-md-right">
                                         <!-- <a href="#" style="text-decoration: none;color: black;">Save for Later</a> -->
                                         {!! Form::open(['action' => array('SaveForLaterController@switchToCart', $item->rowId), 'method' => 'POST']) !!}
                                             {{ Form::submit('Move to Cart', ['style' => 'color:black;text-decoration: none; border:none; background: none;float: right;']) }}
