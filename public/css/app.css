@@ -9906,7 +9906,7 @@ h3 {
 }
 
 #navbar {
-  width: fit-content;
+  width: auto;
   display: inline-block;
   list-style-type: none;
   text-align: center;
@@ -9943,11 +9943,11 @@ h3 {
 }
 
 .store-header {
-    height: 337.5px;
+  height: 337.5px;
 }
 
 .logo {
-    width: 600px !important;
+  width: 600px !important;
 }
 
 .breadcrumbs {
